@@ -27,7 +27,6 @@ while ($row = $result_cartdetail->fetch_assoc()) {
     $result_price = $conn->query($select_price);
     $row_price = $result_price->fetch_assoc();
     $price = $row_price["Price"];
-
     $quantity = $row["quantity"];
     $totalprice = $totalprice + ($price * $quantity);
 
@@ -69,7 +68,10 @@ while ($row = $result_cartdetail_sql->fetch_assoc()) {
 
 $result_add_chitiethoadon = $hoadon->AddToHoaDonDetail($max_idHoaDon, $productIDs, $quantities);
 
+// if ($userType === 'admin') {
+// header('location: ../Page/ViewHoaDon.php');} else {
+//     header('location: ../Page/ViewCart.php');
+// }
 
-header('location: ../Page/ViewHoaDon.php');
-
+header('location: ../Page/ViewCart.php?msg=thanhcong');
 ?>
