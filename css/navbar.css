@@ -125,3 +125,9 @@ body {
 
 .navbarr a:hover, .dropdownn:hover .dropbtnn {
   text-decoration: none;}
+
+  @media (max-width: 800px) {
+    .search-bar {
+        display: none !important;
+    }
+}

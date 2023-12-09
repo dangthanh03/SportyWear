@@ -45,6 +45,7 @@ if (isset($_POST['dathang']) && ($_POST['dathang'])) {
         $cart = new DetailCartModel($conn);
         $cart->AddToCartDetail($id_Cart, $product_id, $quantity);
 
+        header('location: ../Page/viewCart.php');
 
         try {
             mysqli_close($conn);
@@ -65,7 +66,7 @@ if (isset($_POST['dathang']) && ($_POST['dathang'])) {
         $old_quantity = $row_cartdetail["quantity"];
         $new_quantity = $old_quantity + $quantity;
 
-        header('location: viewCart.php');
+        header('location: ../Page/viewCart.php');
 
         global $conn;
         $cart = new DetailCartModel($conn);
